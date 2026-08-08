@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ========================================== -->
+        <!-- SECTION 1: USER ACCOUNTS                   -->
+        <!-- All res.users records created first        -->
+        <!-- ========================================== -->
+
+
+
+        <!-- CENTRAL OFFICE -->
+        <!-- ONS User -->
+        <record id="user_aguinaldo" model="res.users">
+            <field name="name">Aguinaldo, Emilio</field>
+            <field name="login">aguinaldo</field>
+            <field name="password">aguinaldo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- CTCO User -->
+        <record id="user_agoncillo" model="res.users">
+            <field name="name">Agoncillo, Marcela</field>
+            <field name="login">agoncillo</field>
+            <field name="password">agoncillo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- CRCSO User -->
+        <record id="user_ejacinto" model="res.users">
+            <field name="name">Jacinto, Emilio</field>
+            <field name="login">ejacinto</field>
+            <field name="password">ejacinto</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- ITDS User -->
+        <record id="user_rizal" model="res.users">
+            <field name="name">Rizal, Jose</field>
+            <field name="login">rizal</field>
+            <field name="password">rizal</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- FAS User -->
+        <record id="user_mabini" model="res.users">
+            <field name="name">Mabini, Apolinario</field>
+            <field name="login">mabini</field>
+            <field name="password">mabini</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- HRD User -->        
+        <record id="user_magbanua" model="res.users">
+            <field name="name">Magbanua, Teresa</field>
+            <field name="login">magbanua</field>
+            <field name="password">magbanua</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_jaena" model="res.users">
+            <field name="name">Jaena, Graciano Lopez</field>
+            <field name="login">jaena</field>
+            <field name="password">jaena</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_hr_admin_co')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- SDD User -->
+        <record id="user_aquino" model="res.users">
+            <field name="name">Aquino, Melchora</field>
+            <field name="login">aquino</field>
+            <field name="password">aquino</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_reviewer')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_balagtas" model="res.users">
+            <field name="name">Balagtas, Francisco</field>
+            <field name="login">balagtas</field>
+            <field name="password">balagtas</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_bonifacio" model="res.users">
+            <field name="name">Bonifacio, Andres</field>
+            <field name="login">bonifacio</field>
+            <field name="password">bonifacio</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_clara" model="res.users">
+            <field name="name">Clara, Maria</field>
+            <field name="login">clara</field>
+            <field name="password">clara</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_admin_staff')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_delacruz" model="res.users">
+            <field name="name">Dela Cruz, Juan</field>
+            <field name="login">delacruz</field>
+            <field name="password">delacruz</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_kasilag" model="res.users">
+            <field name="name">Kasilag, Lucrecia</field>
+            <field name="login">kasilag</field>
+            <field name="password">kasilag</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_silang" model="res.users">
+            <field name="name">Silang, Gabriela</field>
+            <field name="login">silang</field>
+            <field name="password">silang</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_approver')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- SQAD User -->
+        <record id="user_alonzo" model="res.users">
+            <field name="name">Alonzo, Teodora</field>
+            <field name="login">alonzo</field>
+            <field name="password">alonzo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record> 
+
+        <record id="user_benitez" model="res.users">
+            <field name="name">Benitez, Helena</field>
+            <field name="login">benitez</field>
+            <field name="password">benitez</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_approver')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_gdelpilar" model="res.users">
+            <field name="name">Del Pilar, Gregorio</field>
+            <field name="login">gdelpilar</field>
+            <field name="password">gdelpilar</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_mdelpilar" model="res.users">
+            <field name="name">Del Pilar, Marcelo</field>
+            <field name="login">mdelpilar</field>
+            <field name="password">mdelpilar</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_florentino" model="res.users">
+            <field name="name">Florentino, Leona</field>
+            <field name="login">florentino</field>
+            <field name="password">florentino</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_luna" model="res.users">
+            <field name="name">Luna, Antonio</field>
+            <field name="login">luna</field>
+            <field name="password">luna</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_reviewer')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_palma" model="res.users">
+            <field name="name">Palma, Cecilia</field>
+            <field name="login">palma</field>
+            <field name="password">palma</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_admin_staff')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+
+
+        <!-- FIELD OFFICE -->
+        <!-- Region IV-A RSSO User-->
+        <record id="user_escoda" model="res.users">
+            <field name="name">Escoda, Josefa Llanes</field>
+            <field name="login">escoda</field>
+            <field name="password">escoda</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_jluna" model="res.users">
+            <field name="name">Luna, Juan</field>
+            <field name="login">jluna</field>
+            <field name="password">jluna</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_hr_admin_ro')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <!-- Region IV-A Batangas User-->
+        <record id="user_amorsolo" model="res.users">
+            <field name="name">Amorsolo, Fernando</field>
+            <field name="login">amorsolo</field>
+            <field name="password">amorsolo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_laurel" model="res.users">
+            <field name="name">Laurel, Jose P.</field>
+            <field name="login">laurel</field>
+            <field name="password">laurel</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_ponce" model="res.users">
+            <field name="name">Ponce, Mariano</field>
+            <field name="login">ponce</field>
+            <field name="password">ponce</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_admin_staff')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_quezon" model="res.users">
+            <field name="name">Quezon, Manuel L.</field>
+            <field name="login">quezon</field>
+            <field name="password">quezon</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_approver')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+        <record id="user_roxas" model="res.users">
+            <field name="name">Roxas, Manuel</field>
+            <field name="login">roxas</field>
+            <field name="password">roxas</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('psa_roles.group_psa_employee'), ref('psa_roles.group_psa_reviewer')])]"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[(6, 0, [ref('base.main_company')])]"/>
+        </record>
+
+
+
+
+        <!-- ========================================== -->
+        <!-- SECTION 2: EMPLOYEE RECORDS                -->
+        <!-- All hr.employee records linked to users    -->
+        <!-- ========================================== -->
+
+        <!-- CENTRAL OFFICE -->
+        <!-- ONS Employee -->
+        <record id="emp_emilio_aguinaldo" model="hr.employee">
+            <field name="name">Aguinaldo, Emilio</field>
+            <field name="surname">Aguinaldo</field>
+            <field name="first_name">Emilio</field>
+            <field name="user_id" ref="user_aguinaldo"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_8.png"/>
+            <field name="employee_id_no">100008</field>
+            <field name="work_email">emilio.aguinaldo@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0008</field>
+            <field name="mobile_phone">+63 917 100 0008</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-NSTAT-9-2015')]"/>
+        </record>
+
+        <!-- CTCO Employee -->
+        <record id="emp_marcela_agoncillo" model="hr.employee">
+            <field name="name">Agoncillo, Marcela</field>
+            <field name="surname">Agoncillo</field>
+            <field name="first_name">Marcela</field>
+            <field name="user_id" ref="user_agoncillo"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_7.png"/>
+            <field name="employee_id_no">100007</field>
+            <field name="work_email">marcela.agoncillo@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0007</field>
+            <field name="mobile_phone">+63 917 100 0007</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ADAS5-7-2015')]"/>
+        </record>
+
+        <!-- CRCSO Employee -->
+        <record id="emp_ejacinto" model="hr.employee">
+            <field name="name">Jacinto, Emilio</field>
+            <field name="user_id" ref="user_ejacinto"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_18.png"/>
+            <field name="work_email">emilio.jacinto@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0018</field>
+            <field name="employee_id_no">100018</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-DNS-4-2015')]"/>
+        </record>
+
+        <!-- ITDS Employee -->
+        <record id="emp_jose_rizal" model="hr.employee">
+            <field name="name">Rizal, Jose</field>
+            <field name="surname">Rizal</field>
+            <field name="first_name">Jose</field>
+            <field name="user_id" ref="user_rizal"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_4.png"/>
+            <field name="employee_id_no">100004</field>
+            <field name="work_email">jose.rizal@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0004</field>
+            <field name="mobile_phone">+63 917 100 0004</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ADAS3-13-2015')]"/>
+        </record>
+
+        <!-- FAS Employee -->
+        <record id="emp_apolinario_mabini" model="hr.employee">
+            <field name="name">Mabini, Apolinario</field>
+            <field name="surname">Mabini</field>
+            <field name="first_name">Apolinario</field>
+            <field name="user_id" ref="user_mabini"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_10.png"/>
+            <field name="employee_id_no">100010</field>
+            <field name="work_email">apolinario.mabini@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0010</field>
+            <field name="mobile_phone">+63 917 100 0010</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ASSNS-7-2015')]"/>
+        </record>
+
+        <!-- HRD Employee -->
+        <record id="emp_magbanua" model="hr.employee">
+            <field name="name">Magbanua, Teresa</field>
+            <field name="user_id" ref="user_magbanua"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_19.png"/>
+            <field name="work_email">teresa.magbanua@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0020</field>
+            <field name="employee_id_no">100020</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-CADOF-89-2015')]"/>
+        </record>
+
+        <record id="emp_jaena" model="hr.employee">
+            <field name="name">Jaena, Graciano Lopez</field>
+            <field name="user_id" ref="user_jaena"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_23.png"/>
+            <field name="work_email">graciano.jaena@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0023</field>
+            <field name="employee_id_no">100023</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ADAS2-91-2015')]"/>
+        </record>
+
+        <!-- SDD Employee -->
+        <record id="emp_melchora_aquino" model="hr.employee">
+            <field name="name">Aquino, Melchora</field>
+            <field name="surname">Aquino</field>
+            <field name="first_name">Melchora</field>
+            <field name="user_id" ref="user_aquino"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_5.png"/>
+            <field name="employee_id_no">100005</field>
+            <field name="work_email">melchora.aquino@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0005</field>
+            <field name="mobile_phone">+63 917 100 0005</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ITO2-57-2015')]"/>
+        </record>
+
+        <record id="emp_balagtas" model="hr.employee">
+            <field name="name">Balagtas, Francisco</field>
+            <field name="user_id" ref="user_balagtas"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_20.png"/>
+            <field name="work_email">francisco.balagtas@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0019</field>
+            <field name="employee_id_no">100019</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA3-61-2015')]"/>
+        </record>
+
+        <record id="emp_andres_bonifacio" model="hr.employee">
+            <field name="name">Bonifacio, Andres</field>
+            <field name="surname">Bonifacio</field>
+            <field name="first_name">Andres</field>
+            <field name="user_id" ref="user_bonifacio"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_6.png"/>
+            <field name="employee_id_no">100006</field>
+            <field name="work_email">andres.bonifacio@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0006</field>
+            <field name="mobile_phone">+63 917 100 0006</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA2-66-2015')]"/>
+        </record>
+
+        <record id="emp_maria_clara" model="hr.employee">
+            <field name="name">Clara, Maria</field>
+            <field name="surname">Clara</field>
+            <field name="first_name">Maria</field>
+            <field name="user_id" ref="user_clara"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_1.png"/>
+            <field name="employee_id_no">100001</field>
+            <field name="work_email">maria.clara@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0001</field>
+            <field name="mobile_phone">+63 917 100 0001</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA3-58-2015')]"/>
+        </record>
+
+        <record id="emp_juan_delacruz" model="hr.employee">
+            <field name="name">Dela Cruz, Juan</field>
+            <field name="surname">Dela Cruz</field>
+            <field name="first_name">Juan</field>
+            <field name="user_id" ref="user_delacruz"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_2.png"/>
+            <field name="employee_id_no">100002</field>
+            <field name="work_email">juan.delacruz@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0002</field>
+            <field name="mobile_phone">+63 917 100 0002</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA1-75-2015')]"/>
+        </record>
+
+        <record id="emp_lucrecia_kasilag" model="hr.employee">
+            <field name="name">Kasilag, Lucrecia</field>
+            <field name="surname">Kasilag</field>
+            <field name="first_name">Lucrecia</field>
+            <field name="user_id" ref="user_kasilag"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_9.png"/>
+            <field name="employee_id_no">100009</field>
+            <field name="work_email">lucrecia.kasilag@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0009</field>
+            <field name="mobile_phone">+63 917 100 0009</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA1-77-2015')]"/>
+        </record>
+
+        <record id="emp_gabriela_silang" model="hr.employee">
+            <field name="name">Silang, Gabriela</field>
+            <field name="surname">Silang</field>
+            <field name="first_name">Gabriela</field>
+            <field name="user_id" ref="user_silang"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_3.png"/>
+            <field name="employee_id_no">100003</field>
+            <field name="work_email">gabriela.silang@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0003</field>
+            <field name="mobile_phone">+63 917 100 0003</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ITO3-56-2015')]"/>
+        </record>
+
+        <!-- SQAD Employee -->
+        <record id="emp_teodora_alonzo" model="hr.employee">
+            <field name="name">Alonzo, Teodora</field>
+            <field name="surname">Alonzo</field>
+            <field name="first_name">Teodora</field>
+            <field name="user_id" ref="user_alonzo"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_17.png"/>
+            <field name="employee_id_no">100017</field>
+            <field name="work_email">teodora.alonzo@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0017</field>
+            <field name="mobile_phone">+63 917 100 0017</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA1-87-2015')]"/>
+        </record>
+
+        <record id="emp_helena_benitez" model="hr.employee">
+            <field name="name">Benitez, Helena</field>
+            <field name="surname">Benitez</field>
+            <field name="first_name">Helena</field>
+            <field name="user_id" ref="user_benitez"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_11.png"/>
+            <field name="employee_id_no">100011</field>
+            <field name="work_email">helena.benitez@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0011</field>
+            <field name="mobile_phone">+63 917 100 0011</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ITO2-59-2015')]"/>
+        </record>
+
+        <record id="emp_gregorio_del_pilar" model="hr.employee">
+            <field name="name">Del Pilar, Gregorio</field>
+            <field name="surname">Del Pilar</field>
+            <field name="first_name">Gregorio</field>
+            <field name="user_id" ref="user_gdelpilar"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_14.png"/>
+            <field name="employee_id_no">100014</field>
+            <field name="work_email">gregorio.delpilar@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0014</field>
+            <field name="mobile_phone">+63 917 100 0014</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA3-63-2015')]"/>
+        </record>
+
+        <record id="emp_marcelo_del_pilar" model="hr.employee">
+            <field name="name">Del Pilar, Marcelo</field>
+            <field name="surname">Del Pilar</field>
+            <field name="first_name">Marcelo</field>
+            <field name="user_id" ref="user_mdelpilar"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_16.png"/>
+            <field name="employee_id_no">100016</field>
+            <field name="work_email">marcelo.delpilar@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0016</field>
+            <field name="mobile_phone">+63 917 100 0016</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA2-79-2015')]"/>
+        </record>
+
+        <record id="emp_leona_florentino" model="hr.employee">
+            <field name="name">Florentino, Leona</field>
+            <field name="surname">Florentino</field>
+            <field name="first_name">Leona</field>
+            <field name="user_id" ref="user_florentino"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_13.png"/>
+            <field name="employee_id_no">100013</field>
+            <field name="work_email">leona.florentino@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0013</field>
+            <field name="mobile_phone">+63 917 100 0013</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ADAS2-57-2015')]"/>
+        </record>
+
+        <record id="emp_antonio_luna" model="hr.employee">
+            <field name="name">Luna, Antonio</field>
+            <field name="surname">Luna</field>
+            <field name="first_name">Antonio</field>
+            <field name="user_id" ref="user_luna"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_12.png"/>
+            <field name="employee_id_no">100012</field>
+            <field name="work_email">antonio.luna@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0012</field>
+            <field name="mobile_phone">+63 917 100 0012</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA3-62-2015')]"/>
+        </record>
+
+        <record id="emp_cecilia_palma" model="hr.employee">
+            <field name="name">Palma, Cecilia</field>
+            <field name="surname">Palma</field>
+            <field name="first_name">Cecilia</field>
+            <field name="user_id" ref="user_palma"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_15.png"/>
+            <field name="employee_id_no">100015</field>
+            <field name="work_email">cecilia.palma@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0015</field>
+            <field name="mobile_phone">+63 917 100 0015</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA2-76-2015')]"/>
+        </record>
+
+
+        <!-- FIELD OFFICE -->
+        <!-- Region IV-A RSSO Employee -->
+        <record id="emp_escoda" model="hr.employee">
+            <field name="name">Escoda, Josefa Llanes</field>
+            <field name="user_id" ref="user_escoda"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_21.png"/>
+            <field name="work_email">josefa.escoda@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0021</field>
+            <field name="employee_id_no">100021</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-DIR2-18-2015')]"/>
+        </record>
+
+        <record id="emp_jluna" model="hr.employee">
+            <field name="name">Luna, Juan</field>
+            <field name="user_id" ref="user_jluna"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_22.png"/>
+            <field name="work_email">juan.luna@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0022</field>
+            <field name="employee_id_no">100022</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ADOF3-551-2015')]"/>
+        </record>
+
+        <!-- Region IV-A Batangas Employee -->
+        <record id="emp_amorsolo" model="hr.employee">
+            <field name="name">Amorsolo, Fernando</field>
+            <field name="user_id" ref="user_amorsolo"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_26.png"/>
+            <field name="work_email">fernando.amorsolo@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0026</field>
+            <field name="employee_id_no">100026</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-SS2-146-2015')]"/>
+        </record>
+
+        <record id="emp_laurel" model="hr.employee">
+            <field name="name">Laurel, Jose P.</field>
+            <field name="user_id" ref="user_laurel"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_27.png"/>
+            <field name="work_email">jose.laurel@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0027</field>
+            <field name="employee_id_no">100027</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-ASTAT-90-2015')]"/>
+        </record>
+
+        <record id="emp_ponce" model="hr.employee">
+            <field name="name">Ponce, Mariano</field>
+            <field name="user_id" ref="user_ponce"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_24.png"/>
+            <field name="work_email">mariano.ponce@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0024</field>
+            <field name="employee_id_no">100024</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-SA-220-2015')]"/>
+        </record>
+
+        <record id="emp_quezon" model="hr.employee">
+            <field name="name">Quezon, Manuel L.</field>
+            <field name="user_id" ref="user_quezon"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_28.png"/>
+            <field name="work_email">manuel.quezon@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0028</field>
+            <field name="employee_id_no">100028</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-CSTATS-127-2015')]"/>
+        </record>
+
+        <record id="emp_roxas" model="hr.employee">
+            <field name="name">Roxas, Manuel</field>
+            <field name="user_id" ref="user_roxas"/>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/face_25.png"/>
+            <field name="work_email">manuel.roxas@psa.gov.ph</field>
+            <field name="work_phone">(02) 8461-0025</field>
+            <field name="employee_id_no">100025</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-SVSTATS-128-2015')]"/>
+        </record>
+    </data>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: ADMIN UPDATES                   -->
+    <!-- Special records that can be updated        -->
+    <!-- ========================================== -->
+
+    <data noupdate="0">
+        <!-- Rename Administrator -->
+        <record id="base.user_admin" model="res.users">
+            <field name="name">Admin, SDD</field>
+        </record>
+
+        <!-- Update existing Admin Employee -->
+        <record id="hr.employee_admin" model="hr.employee">
+            <field name="name">Admin, SDD</field>
+            <field name="surname">Admin</field>
+            <field name="first_name">SDD</field>
+            <field name="image_1920" type="base64" file="psa_patches/static/mock_faces/admin.png"/>
+            <field name="work_email">sdd.admin@psa.gov.ph</field>
+            <field name="work_phone">(02) 8374-8261</field>
+            <field name="employee_id_no">000000</field>
+            <field name="nature_of_employment_id" search="[('name', '=', 'Permanent')]"/>
+            <field name="plantilla_id_no" search="[('name', '=', 'PSA-INFOSA2-68-2015')]"/>
+        </record>
+    </data>
+</odoo>

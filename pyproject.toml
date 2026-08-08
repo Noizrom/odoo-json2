@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odoo-json2"
+version = "0.2.0"
+description = "Modern Python client and CLI for Odoo 19+ External JSON-2 API with Bearer API Key auth and Rich terminal outputs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Odoo Developer", email = "dev@example.com" }
+]
+keywords = ["odoo", "odoo19", "json2", "external-api", "odoorpc", "rest", "api", "rich"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "requests>=2.28.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+legacy = [
+    "odoorpc>=0.10.1",
+    "PySocks>=1.7.0",
+    "Faker>=24.0.0",
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "requests-mock>=1.11.0",
+]
+
+[project.scripts]
+odoo-json2 = "odoo_json2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

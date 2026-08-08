@@ -1,0 +1,22 @@
+# Environment & credentials
+.env
+*.env
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environment & build outputs
+.venv/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local exploratory testing playground
+scratchpad/
