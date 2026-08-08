@@ -1,6 +1,6 @@
 # 🚀 odoo-json2
 
-[![CI](https://github.com/your-username/odoo-json2/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/odoo-json2/actions/workflows/ci.yml)
+[![CI](https://github.com/Noizrom/odoo-json2/actions/workflows/ci.yml/badge.svg)](https://github.com/Noizrom/odoo-json2/actions/workflows/ci.yml)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Odoo Version](https://img.shields.io/badge/odoo-19.0%2B-purple.svg)](https://www.odoo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -128,8 +128,7 @@ Explore the `examples/` directory for ready-to-run scripts:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/odoo-json2.git
-cd odoo-json2
+git clone https://github.com/Noizrom/odoo-json2.git
 
 # Install dependencies with uv
 uv pip install -e ".[dev]"
