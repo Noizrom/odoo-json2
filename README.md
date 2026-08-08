@@ -105,7 +105,7 @@ odoo-json2 apply-theme --theme glassmorphism
 Explore the `examples/` directory for ready-to-run scripts:
 - [`examples/01_quickstart.py`](examples/01_quickstart.py): Basic CRUD operations, `search_read`, `create`, `write`, and `unlink`.
 - [`examples/02_sales_and_inventory.py`](examples/02_sales_and_inventory.py): Sales quotation creation, product catalog queries, and customer management.
-- [`ODOO_19_API_CUSTOMIZATION_GUIDE.md`](ODOO_19_API_CUSTOMIZATION_GUIDE.md): In-depth guide on JSON-2 API specifications, API Key security, and QWeb view customization without server access.
+- [`scratchpad/ODOO_19_API_CUSTOMIZATION_GUIDE.md`](scratchpad/ODOO_19_API_CUSTOMIZATION_GUIDE.md): In-depth guide on JSON-2 API specifications, API Key security, and QWeb view customization without server access.
 - [`AGENT.md`](AGENT.md): Architectural guide and developer workflow instructions for human developers and AI agents.
 
 ---
