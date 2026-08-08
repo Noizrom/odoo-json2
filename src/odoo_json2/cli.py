@@ -17,13 +17,12 @@ from rich.table import Table
 
 from .client import JSON2Client
 from .exceptions import OdooJSON2Error
-from .theme import apply_login_theme
 
 console = Console()
 
 
 def get_client_from_args(args: argparse.Namespace) -> JSON2Client:
-    load_dotenv()
+    load_dotenv(override=True)
     host = args.host or os.getenv("ODOO_HOST")
     api_key = args.key or os.getenv("ODOO_API_KEY")
     database = args.db or os.getenv("ODOO_DATABASE")
@@ -135,22 +134,6 @@ def cmd_search(args: argparse.Namespace) -> None:
             console.print(f"[yellow]No records found for domain {domain}[/yellow]")
 
 
-def cmd_apply_theme(args: argparse.Namespace) -> None:
-    """Apply a modern QWeb login theme over JSON-2 API."""
-    client = get_client_from_args(args)
-    
-    with Progress(SpinnerColumn(), TextColumn("Injecting glassmorphic login theme into web.login_layout..."), console=console):
-        res = apply_login_theme(client, theme_name=args.theme)
-
-    panel = Panel(
-        f"[bold green]Theme Applied Successfully![/bold green]\n\n"
-        f"Status: [yellow]{res['status']}[/yellow]\n"
-        f"View ID: [cyan]{res['view_id']}[/cyan]\n"
-        f"View Name: {res['name']}",
-        title="Odoo 19 UI Customization",
-        border_style="green"
-    )
-    console.print(panel)
 
 
 def main() -> None:
@@ -185,10 +168,6 @@ def main() -> None:
     p_search.add_argument("--json", action="store_true", help="Output raw JSON")
     p_search.set_defaults(func=cmd_search)
 
-    # apply-theme
-    p_theme = subparsers.add_parser("apply-theme", help="Apply modern QWeb login theme")
-    p_theme.add_argument("--theme", default="glassmorphism", help="Theme name")
-    p_theme.set_defaults(func=cmd_apply_theme)
 
     args = parser.parse_args()
     if not args.command:

@@ -7,6 +7,7 @@ import os
 import time
 import requests
 from typing import Any, Dict, List, Optional, Tuple, Union
+from dotenv import load_dotenv
 
 from rich.console import Console
 from rich.logging import RichHandler
@@ -77,6 +78,7 @@ class JSON2Client:
     @classmethod
     def from_env(cls, **kwargs) -> "JSON2Client":
         """Instantiate client from environment variables (ODOO_HOST, ODOO_API_KEY, ODOO_DATABASE)."""
+        load_dotenv(override=True)
         host = os.getenv("ODOO_HOST", "localhost")
         api_key = os.getenv("ODOO_API_KEY", "")
         database = os.getenv("ODOO_DATABASE")

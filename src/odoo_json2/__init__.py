@@ -13,7 +13,6 @@ from .exceptions import (
     OdooServerException,
     OdooValidationError,
 )
-from .theme import apply_login_theme
 __all__ = [
     "JSON2Client",
     "OdooJSON2",
@@ -24,6 +23,5 @@ __all__ = [
     "OdooNotFoundError",
     "OdooValidationError",
     "OdooServerException",
-    "apply_login_theme",
     "__version__",
 ]

@@ -10,12 +10,13 @@ load_dotenv()
 
 HOST = os.getenv("ODOO_HOST", "mycompany.odoo.com")
 API_KEY = os.getenv("ODOO_API_KEY", "your_bearer_api_key")
-DATABASE = os.getenv("ODOO_DATABASE", "mycompany")
+DATABASE = os.getenv("ODOO_DATABASE")
+PROTOCOL = os.getenv("ODOO_PROTOCOL", "https")
 
 
 def main():
     print(f"Connecting to Odoo 19 instance at {HOST}...")
-    client = JSON2Client(host=HOST, api_key=API_KEY, database=DATABASE, protocol="https")
+    client = JSON2Client(host=HOST, api_key=API_KEY, database=DATABASE, protocol=PROTOCOL)
 
     # Access models via odoorpc-style env dictionary syntax
     Product = client.env["product.product"]
@@ -36,24 +37,26 @@ def main():
 
         for p in products:
             code_str = f"[{p['default_code']}] " if p.get("default_code") else ""
-            print(f"Product ID: {p['id']} | {code_str}{p['name']} | Price: ${p.get('list_price', 0.0):.2f}")
+            print(f"  - [{p['id']}] {code_str}{p['name']} | Price: ${p.get('list_price', 0.0):.2f}")
 
-        # 2. Find or pick a customer partner
-        print("\n--- 2. Fetching Customer Partner ---")
-        customers = Partner.search_read(domain=[("is_company", "=", True)], fields=["id", "name"], limit=1)
+        # 2. Search for a customer partner
+        print("\n--- 2. Locating Customer Partner ---")
+        customers = Partner.search_read(
+            domain=[("customer_rank", ">", 0)],
+            fields=["id", "name"],
+            limit=1
+        )
         if not customers:
-            print("No customer partners found. Creating a test customer...")
-            customer_id = Partner.create({"name": "Global Tech Logistics", "is_company": True})[0]
-        else:
-            customer_id = customers[0]["id"]
-            print(f"Selected Customer: {customers[0]['name']} (ID: {customer_id})")
+            customers = Partner.search_read([], fields=["id", "name"], limit=1)
 
-        # 3. Create a new Quotation / Sales Order with order line
-        print("\n--- 3. Creating Sales Quotation ---")
+        customer = customers[0]
+        print(f"Selected Customer: [{customer['id']}] {customer['name']}")
+
+        # 3. Create a Sales Order Draft (Quotation)
+        print("\n--- 3. Creating Sale Order Draft ---")
         selected_product = products[0]
-        
         sale_order_ids = SaleOrder.create([{
-            "partner_id": customer_id,
+            "partner_id": customer["id"],
             "order_line": [
                 (0, 0, {
                     "product_id": selected_product["id"],
@@ -62,9 +65,9 @@ def main():
                 })
             ]
         }])
-        
+
         order_id = sale_order_ids[0]
-        print(f"[✓] Created Quotation / Sale Order ID: {order_id}")
+        print(f"Created Quotation / Sale Order ID: {order_id}")
 
         # 4. Read Quotation summary
         order_info = SaleOrder.read([order_id], fields=["name", "amount_total", "state"])[0]

@@ -10,12 +10,13 @@ load_dotenv()
 
 HOST = os.getenv("ODOO_HOST", "mycompany.odoo.com")
 API_KEY = os.getenv("ODOO_API_KEY", "your_bearer_api_key")
-DATABASE = os.getenv("ODOO_DATABASE", "mycompany")
+DATABASE = os.getenv("ODOO_DATABASE")
+PROTOCOL = os.getenv("ODOO_PROTOCOL", "https")
 
 
 def main():
     print(f"Connecting to Odoo 19 JSON-2 API at {HOST}...")
-    client = JSON2Client(host=HOST, api_key=API_KEY, database=DATABASE, protocol="https")
+    client = JSON2Client(host=HOST, api_key=API_KEY, database=DATABASE, protocol=PROTOCOL)
 
     # Access models via odoorpc-style env dictionary syntax
     Partner = client.env["res.partner"]

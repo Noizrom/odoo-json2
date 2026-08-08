@@ -22,7 +22,6 @@ Starting in **Odoo 19.0**, legacy XML-RPC (`/xmlrpc`, `/xmlrpc/2`), JSON-RPC (`/
 - ⚡ **Zero-Rewrite Migration from `odoorpc`**: Supports the exact `client.env['res.partner']` syntax you already know.
 - 🎨 **Rich Terminal Experience**: Beautiful CLI with colorized tables, progress spinners, JSON syntax highlighting, and model inspection powered by `rich`.
 - 📦 **Modern Tooling**: Package managed with `uv` and standard `pyproject.toml`.
-- 🛠️ **No-Code QWeb UI Theme Customization**: Includes automated tools to apply glassmorphic login themes over API.
 
 ---
 
@@ -94,8 +93,6 @@ odoo-json2 inspect res.partner --limit 20
 odoo-json2 search res.partner --domain '[["is_company", "=", true]]' --fields "id,name,email"
 odoo-json2 search res.partner --json
 
-# Apply modern glassmorphic theme to the Odoo 19 login page over API
-odoo-json2 apply-theme --theme glassmorphism
 ```
 
 ---
@@ -104,6 +101,7 @@ odoo-json2 apply-theme --theme glassmorphism
 
 Explore the `examples/` directory for ready-to-run scripts:
 - [`examples/01_quickstart.py`](examples/01_quickstart.py): Basic CRUD operations, `search_read`, `create`, `write`, and `unlink`.
+- [`examples/02_customize_login_screen.py`](examples/02_customize_login_screen.py): QWeb login screen customization example built on generic `client.env["ir.ui.view"]` model proxy calls.
 - [`examples/02_sales_and_inventory.py`](examples/02_sales_and_inventory.py): Sales quotation creation, product catalog queries, and customer management.
 - [`scratchpad/ODOO_19_API_CUSTOMIZATION_GUIDE.md`](scratchpad/ODOO_19_API_CUSTOMIZATION_GUIDE.md): In-depth guide on JSON-2 API specifications, API Key security, and QWeb view customization without server access.
 - [`AGENT.md`](AGENT.md): Architectural guide and developer workflow instructions for human developers and AI agents.

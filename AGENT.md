@@ -17,7 +17,6 @@ odoo-rpc/
 │   │   ├── client.py         # JSON2Client main HTTP client & endpoint handler
 │   │   ├── env.py            # Environment dict accessor & ModelProxy dynamic ORM
 │   │   ├── exceptions.py     # Custom exception hierarchy
-│   │   ├── theme.py          # QWeb login page theme manager
 │   │   └── cli.py            # Rich terminal CLI interface (odoo-json2)
 │   └── odoo_rpc_utils/       # Legacy compatibility wrapper module
 ├── tests/                    # Pytest suite (100% mocked HTTP tests)
