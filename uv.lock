@@ -305,7 +305,6 @@ wheels = [
 
 [[package]]
 name = "odoo-json2"
-version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "python-dotenv" },

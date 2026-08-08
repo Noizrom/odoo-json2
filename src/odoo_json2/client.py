@@ -19,6 +19,7 @@ from .exceptions import (
     OdooValidationError,
 )
 from .env import Environment
+from . import __version__
 
 logger = logging.getLogger("odoo_json2")
 console = Console()
@@ -65,7 +66,7 @@ class JSON2Client:
         self.session.headers.update({
             "Authorization": f"bearer {self.api_key}",
             "Content-Type": "application/json; charset=utf-8",
-            "User-Agent": "odoo-json2/0.2.0 Python-Requests"
+            "User-Agent": f"odoo-json2/{__version__} Python-Requests"
         })
         if self.database:
             self.session.headers["X-Odoo-Database"] = self.database

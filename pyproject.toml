@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "odoo-json2"
-version = "0.2.0"
+dynamic = ["version"]
 description = "Modern Python client and CLI for Odoo 19+ External JSON-2 API with Bearer API Key auth and Rich terminal outputs"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -54,3 +54,5 @@ where = ["src"]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-v --tb=short"
+[tool.setuptools.dynamic]
+version = {attr = "odoo_json2.__version__"}

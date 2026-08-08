@@ -2,6 +2,8 @@
 odoo-json2: Modern Python Client & CLI for Odoo 19+ External JSON-2 API (/json/2).
 """
 
+__version__ = "0.2.0"
+
 from .client import JSON2Client, OdooJSON2
 from .env import Environment, ModelProxy
 from .exceptions import (
@@ -12,8 +14,6 @@ from .exceptions import (
     OdooValidationError,
 )
 from .theme import apply_login_theme
-
-__version__ = "0.2.0"
 __all__ = [
     "JSON2Client",
     "OdooJSON2",
