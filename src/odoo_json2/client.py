@@ -46,14 +46,14 @@ class JSON2Client:
         self.raw_host = host
         clean_host = host.rstrip("/").replace("http://", "").replace("https://", "")
         
-        # Auto-detect protocol if passed in host
+        # Normalize protocol (converting legacy jsonrpc/jsonrpc+ssl to http/https)
         if host.startswith("http://"):
             self.protocol = "http"
         elif host.startswith("https://"):
             self.protocol = "https"
         else:
-            self.protocol = protocol
-            
+            proto = (protocol or "https").lower().replace("jsonrpc+ssl", "https").replace("jsonrpc", "https").replace("+ssl", "")
+            self.protocol = proto if proto in ("http", "https") else "https"
         self.host = clean_host
         self.api_key = api_key
         self.database = database or os.getenv("ODOO_DATABASE")
