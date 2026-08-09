@@ -1,13 +1,14 @@
-"""
-02_customize_login_screen.py - Customize Odoo 19 Login Screen via JSON-2 API.
+"""Customize Odoo's login screen through the JSON-2 API.
 
-Demonstrates QWeb view inheritance by creating/updating an ir.ui.view record
-on web.login_layout using odoo-json2 model proxy with a modern dark theme.
+The example creates or updates an inherited QWeb view for ``web.login_layout``
+with a modern dark theme.
 """
 
 import logging
 import os
+
 from dotenv import load_dotenv
+
 from odoo_json2 import JSON2Client, OdooJSON2Error
 
 load_dotenv(override=True)
@@ -21,8 +22,11 @@ DARK_THEME_CSS = """<style><![CDATA[
     /* 1. Root & Page Dark Background */
     html, body, body.o_home_menu_background {
         background-color: #0b0f19 !important;
-        background-image: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%) !important;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        background-image: linear-gradient(
+            135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%
+        ) !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+            "Segoe UI", Roboto, sans-serif !important;
         color: #f8fafc !important;
         min-height: 100vh !important;
         margin: 0 !important;
@@ -206,46 +210,77 @@ DARK_THEME_CSS = """<style><![CDATA[
 
 
 def customize_login_screen(client: JSON2Client) -> dict[str, object]:
-    """Inject modern dark styling into Odoo's web.login_layout view using ir.ui.view."""
-    View = client.env["ir.ui.view"]
-    parent_views = View.search_read([("key", "=", "web.login_layout")], fields=["id", "name"])
+    """Inject modern dark styling into Odoo's ``web.login_layout`` view."""
+    view = client.env["ir.ui.view"]
+    parent_views = view.search_read(
+        [("key", "=", "web.login_layout")],
+        fields=["id", "name"],
+    )
     if not parent_views:
         raise RuntimeError("Parent view 'web.login_layout' not found in Odoo database.")
 
     parent_id = parent_views[0]["id"]
     view_name = "Modern Simple Dark Login Theme (odoo-json2)"
     view_arch = f"""
-    <xpath expr="//div[contains(@t-attf-class, 'o_database_list') or contains(@class, 'o_database_list') or contains(@class, 'container')]" position="before">
+    <xpath
+        expr="//div[
+            contains(@t-attf-class, 'o_database_list') or
+            contains(@class, 'o_database_list') or
+            contains(@class, 'container')
+        ]"
+        position="before"
+    >
         {DARK_THEME_CSS}
     </xpath>
     """
 
-    existing = View.search_read([("name", "like", "Modern Simple")], fields=["id"])
+    existing = view.search_read(
+        [("name", "like", "Modern Simple")],
+        fields=["id"],
+    )
     if existing:
         view_id = existing[0]["id"]
-        View.write([view_id], {"arch": view_arch, "active": True, "name": view_name})
+        view.write(
+            [view_id],
+            {"arch": view_arch, "active": True, "name": view_name},
+        )
         return {"status": "updated", "view_id": view_id, "name": view_name}
 
-    view_ids = View.create([{
-        "name": view_name,
-        "type": "qweb",
-        "mode": "extension",
-        "inherit_id": parent_id,
-        "arch": view_arch,
-        "priority": 99,
-    }])
+    view_ids = view.create(
+        [
+            {
+                "name": view_name,
+                "type": "qweb",
+                "mode": "extension",
+                "inherit_id": parent_id,
+                "arch": view_arch,
+                "priority": 99,
+            }
+        ]
+    )
     return {"status": "created", "view_id": view_ids[0], "name": view_name}
 
 
 def main() -> None:
+    """Create or update the login theme."""
     logging.basicConfig(level=logging.INFO)
-    client = JSON2Client(host=HOST, api_key=API_KEY, database=DATABASE, protocol=PROTOCOL)
+    client = JSON2Client(
+        host=HOST,
+        api_key=API_KEY,
+        database=DATABASE,
+        protocol=PROTOCOL,
+    )
     try:
-        res = customize_login_screen(client)
-        print(f"Status: {res['status']} | View ID: {res['view_id']} | Name: {res['name']}")
-        print(f"Open https://{HOST}/web/login to view your custom dark login screen!")
-    except (OdooJSON2Error, RuntimeError) as err:
-        print(f"Error customizing login screen: {err}")
+        result = customize_login_screen(client)
+        print(
+            f"Status: {result['status']} | View ID: {result['view_id']} | "
+            f"Name: {result['name']}"
+        )
+        print(
+            f"Open https://{HOST}/web/login to view your custom dark login screen!"
+        )
+    except (OdooJSON2Error, RuntimeError) as error:
+        print(f"Error customizing login screen: {error}")
 
 
 if __name__ == "__main__":
