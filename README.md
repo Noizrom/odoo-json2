@@ -48,32 +48,35 @@ from odoo_json2 import JSON2Client
 client = JSON2Client(
     host="mycompany.odoo.com",
     api_key="your_160bit_bearer_api_key",
-    database="mycompany"
+    database="mycompany",
 )
 
-# Access models via odoorpc-style env dictionary syntax
-Partner = client.env["res.partner"]
+# Access models via odoorpc-style environment dictionary syntax.
+partner = client.env["res.partner"]
 
-# Search and read records
-companies = Partner.search_read(
+# Search and read records.
+companies = partner.search_read(
     domain=[("is_company", "=", True)],
     fields=["name", "email", "phone"],
-    limit=5
+    limit=5,
 )
 print(companies)
 
-# Create record
-new_id = Partner.create({
-    "name": "Acme Global",
-    "email": "contact@acme.example",
-    "is_company": True
-})
+# Create a record.
+new_ids = partner.create(
+    [
+        {
+            "name": "Acme Global",
+            "email": "contact@acme.example",
+            "is_company": True,
+        }
+    ]
+)
+new_id = new_ids[0]
 
-# Write / Update record
-Partner.write([new_id], {"phone": "+1-800-555-0199"})
-
-# Delete record
-Partner.unlink([new_id])
+# Update and delete the record.
+partner.write([new_id], {"phone": "+1-800-555-0199"})
+partner.unlink([new_id])
 ```
 
 ---
@@ -99,7 +102,10 @@ odoo-json2 search res.partner --json
 
 ## 📁 Examples & Documentation
 
-Explore the `examples/` directory for ready-to-run scripts:
+Explore the ready-to-run scripts in `examples/`. Configure credentials in `.env`
+from [`.env.example`](.env.example), then run an example with
+`uv run python <example-path>`.
+
 - [`examples/01_quickstart.py`](examples/01_quickstart.py): Basic CRUD operations, `search_read`, `create`, `write`, and `unlink`.
 - [`examples/02_customize_login_screen.py`](examples/02_customize_login_screen.py): QWeb login screen customization example built on generic `client.env["ir.ui.view"]` model proxy calls.
 - [`examples/02_sales_and_inventory.py`](examples/02_sales_and_inventory.py): Sales quotation creation, product catalog queries, and customer management.
