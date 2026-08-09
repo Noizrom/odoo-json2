@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-    { name = "Odoo Developer", email = "dev@example.com" }
+    { name = "Noizrom" }
 ]
 keywords = ["odoo", "odoo19", "json2", "external-api", "odoorpc", "rest", "api", "rich"]
 classifiers = [
@@ -46,6 +46,11 @@ dev = [
 
 [project.scripts]
 odoo-json2 = "odoo_json2.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Noizrom/odoo-json2"
+Repository = "https://github.com/Noizrom/odoo-json2"
+Issues = "https://github.com/Noizrom/odoo-json2/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
